@@ -4,16 +4,13 @@
 <div class="appointment-content">
   <div class="appointment-header">
     <h2>Consultas agendadas</h2>
-
-    <%= link_to "Agendar consulta", new_appointment_path %>
-
   </div>
 
   <table class="table">
       <thead>
         <tr>
-          <th>Médico</th>
           <th>Paciente</th>
+          <th>Médico</th>
           <th>Marcado para</th>
           <th>Início</th>
           <th>Término</th>
@@ -22,8 +19,8 @@
       <% @appointments.each do |appointment| %>
       <tbody>
         <tr>
-          <td><%= appointment.doctor.name %></td>
           <td><%= appointment.patient.name %></td>
+          <td><%= appointment.doctor.name %></td>
           <td><%= appointment.starts_at.day %>/<%= appointment.starts_at.month %>/<%= appointment.starts_at.year %></td>
           <% if appointment.starts_at.min == 0 %>
             <td><%= appointment.starts_at.hour %>:0<%= appointment.starts_at.min %> h</td>
