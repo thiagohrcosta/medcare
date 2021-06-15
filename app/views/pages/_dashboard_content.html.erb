@@ -5,17 +5,24 @@
         <div class="icon-background">
           <i class="fas fa-dash-icon fa-notes-medical fa-4x"></i>
         </div>
-        <h3>Total de consultas</h3>
+        <dir class="p-3">
+          <p class="appointment-counter">0<%= @appointments_count %></p>
+          <p>Total de consultas realizadas</p>
+        </dir>
       </div>
       <div class="status-flex">
         <div class="icon-background">
           <i class="fas fa-dash-icon fa-procedures fa-4x"></i>
         </div>
-        <h3>Total de pacientes únicos atendidos</h3>
+        <div class="p-3">
+          <p class="appointment-counter">0<%= @unique_count_patients %></p>
+          <p>Total de pacientes únicos atendidos </p>
+        </div>
       </div>
       <div class="dash-quick-action">
         <%= link_to "Cadastrar novo médico", new_doctor_path, class: "btn-add-doctor mb-3" %>
-        <%= link_to "Cadastrar paciente", new_patient_path, class: "btn-add-doctor" %>
+        <%= link_to "Cadastrar paciente", new_patient_path, class: "btn-add-doctor mb-3" %>
+        <%= link_to "Agendar consulta", new_appointment_path, class: "btn-add-doctor" %>
       </div>
     </div>
   </div>
