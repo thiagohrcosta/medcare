@@ -1,0 +1,9 @@
+<%= simple_form_for(appointment) do |f| %>
+  <%= f.association :patients, label: "Paciente" %>
+
+  <% if @appointment.new_record? %>
+    <%= f.submit "Agendar", class: "btn-create-doctor" %>
+  <% else %>
+    <%= f.submit "Editar", class: "btn-create-doctor" %>
+  <% end %>
+<% end %>
