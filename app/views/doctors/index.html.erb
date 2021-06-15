@@ -19,7 +19,11 @@
         <td><%= doctor.crm %></td>
         <td><%= doctor.crm_uf %></td>
         <td><i class="fas fa-edit-doctor fa-user-edit"></i></td>
-        <td><i class="fas fa-delete-doctor fa-times-circle"></i></td>
+        <td>
+          <%= link_to destroy_doctor_path(doctor.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+            <i class="fas fa-delete-doctor fa-times-circle"></i>
+          <% end %>
+        </td>
       </tr>
     </tbody>
   <% end %>
