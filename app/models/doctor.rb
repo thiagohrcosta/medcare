@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-  has_many :appointments
+  has_many :appointments, dependent: :restrict
 
   validates :name, presence: true
   validates :crm, uniqueness: { scope: [:crm_uf] }
