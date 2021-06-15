@@ -2,7 +2,15 @@
 <%= render './pages/dashboard_content' %>
 
 <div class="doctor-content">
-  <h2>Cadastrar novo médico</h2>
-  <%= render 'form', doctor: @doctor %>
+  <h2>Lista de médicos</h2>
+
+  <% @doctors.each do |doctor| %>
+    <p><%= doctor.name %></p>
+  <% end %>
 
 </div>
+
+
+
+
+
