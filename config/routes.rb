@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
   resources :doctors
-  delete "/doctors/:id", to: "doctors#destroy", as: :destroy_doctor
+  delete '/doctors/:id', to: 'doctors#destroy', as: :destroy_doctor
 
   resources :patients
+  delete '/patients/:id', to: 'patients#destroy', as: :destroy_patient
+
 end

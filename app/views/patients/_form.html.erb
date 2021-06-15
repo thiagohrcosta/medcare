@@ -1,7 +1,7 @@
 <%= simple_form_for(patient) do |f| %>
   <%= f.input :name, label: "Nome" %>
   <%= f.input :cpf, label: "CPF" %>
-  <%= f.input :bith_date, label: "Data de Nascimento" %>
+  <%= f.input :birth_date, label: "Data de Nascimento" %>
   <% if @patient.new_record? %>
     <%= f.submit "Cadastrar", class: "btn-create-doctor" %>
   <% else %>

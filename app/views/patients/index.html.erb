@@ -1,0 +1,40 @@
+<%= render './pages/sidebar' %>
+<%= render './pages/dashboard_content' %>
+
+<div class="doctor-content">
+  <h2>Lista de pacientes</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Nascimento</th>
+      </tr>
+    </thead>
+  <% @patients.each do |patient| %>
+    <tbody>
+      <tr>
+        <td><%= patient.name %></td>
+        <td><%= patient.cpf %></td>
+        <td><%= patient.birth_date %></td>
+        <td>
+          <%= link_to "#" do %>
+            <i class="fas fa-edit-doctor fa-user-edit"></i></td>
+          <% end %>
+        <td>
+          <%= link_to destroy_patient_path(patient.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+            <i class="fas fa-delete-doctor fa-times-circle"></i>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+  </table>
+
+</div>
+
+
+
+
+
