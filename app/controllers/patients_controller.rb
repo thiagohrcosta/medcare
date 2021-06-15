@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, except: [:index, :new, :create]
+  before_action :set_counter, only: [:index, :new, :edit]
 
   def index
     @patients = Patient.all
@@ -45,5 +46,10 @@ class PatientsController < ApplicationController
 
   def set_patient
     @patient = Patient.find(params[:id])
+  end
+
+  def set_counter
+    @appointments_count = Appointment.all.where("ends_at <= ?", DateTime.now).count
+    @unique_count_patients = Appointment.select('distinct(patient_id)').where("ends_at <= ?", DateTime.now).count
   end
 end
