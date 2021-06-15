@@ -35,6 +35,9 @@ class DoctorsController < ApplicationController
     redirect_to doctors_path
   end
 
+  def home
+  end
+
   private
 
   def doctor_params
