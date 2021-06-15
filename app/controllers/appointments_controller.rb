@@ -3,6 +3,8 @@ class AppointmentsController < ApplicationController
 
   def index
     @appointments = Appointment.all
+    @appointments_count = Appointment.all.where("ends_at <= ?", DateTime.now).count
+    @unique_count_patients = Appointment.select('distinct(patient_id)').where("ends_at <= ?", DateTime.now).count
   end
 
   def show;end
