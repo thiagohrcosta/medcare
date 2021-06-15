@@ -1,8 +1,8 @@
 <%= simple_form_for(appointment) do |f| %>
   <%= f.association :patient, label: "Paciente" %>
   <%= f.association :doctor, label: "Médico" %>
-  <%= f.input :starts_at, label: "Início da consulta" %>
-  <%= f.input :ends_at, label: "Término da consulta" %>
+  <%= f.input :starts_at, minute_step: 30, label: "Início da consulta" %>
+  <%= f.input :ends_at, minute_step: 30, label: "Término da consulta" %>
   <% if @appointment.new_record? %>
     <%= f.submit "Agendar", class: "btn-create-doctor" %>
   <% else %>
