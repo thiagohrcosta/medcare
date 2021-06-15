@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Doctor, type: :model do
+  context "Doctor Validation" do
   it 'Doctor is valid with valid attributes' do
     doctor = Doctor.new(
       name: 'Derek Shepherd',
@@ -36,10 +37,12 @@ RSpec.describe Doctor, type: :model do
     )
     expect(doctor).to_not be_valid
   end
+end
 
   # it 'Is not valid with duplicate CRM / UF' do
 
   # end
-
-  it { should validate_uniqueness_of(:crm).scoped_to(:crm_uf)}
+  context 'Uniqueness Validation' do
+    it { should validate_uniqueness_of(:crm).scoped_to(:crm_uf)}
+  end
 end
