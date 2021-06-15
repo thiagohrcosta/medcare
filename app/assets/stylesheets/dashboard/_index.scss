@@ -28,6 +28,15 @@
   list-style-type: none;
 }
 
+.dash-menu-item{
+  color: #fff;
+}
+
+.dash-menu-item:hover{
+  opacity: 0.9;
+  color: #fff;
+}
+
 .status-card{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

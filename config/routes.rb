@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
-
+  delete "/doctors/:id", to: "doctors#destroy", as: :destroy_doctor
   resources :doctors
 end

@@ -1,0 +1,10 @@
+<%= simple_form_for(doctor) do |f| %>
+  <%= f.input :name, label: "Nome" %>
+  <%= f.input :crm, label: "CRM" %>
+  <%= f.input :crm_uf, label: "CRM-UF" %>
+  <% if @doctor.new_record? %>
+    <%= f.submit "Cadastrar", class: "btn-create-doctor" %>
+  <% else %>
+    <%= f.submit "Editar", class: "btn-create-doctor" %>
+  <% end %>
+<% end %>
