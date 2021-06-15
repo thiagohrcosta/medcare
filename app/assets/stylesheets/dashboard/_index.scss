@@ -1,0 +1,66 @@
+.background-dashboard{
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar{
+  width: 15%;
+  background-color: #2F4687;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-content{
+  color: #fff;
+}
+
+.hr-line{
+  width: 50%;
+  background-color: #fff;
+  opacity: 0.4;
+}
+
+.dashboard-content{
+  padding: 20px;
+  margin-left: 15%;
+}
+
+.icon-list{
+  list-style-type: none;
+}
+
+.status-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 10px;
+
+  .status-flex{
+    border: 1px solid #d1d9d9;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-background{
+    border-radius: 20px 0 0 20px;
+    background-color: #2F4687;
+    padding: 20px;
+  }
+
+  .fa-dash-icon{
+    color: #fff;
+  }
+
+  .btn-add-doctor{
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #2F4687;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 25px;
+  }
+
+  .dash-quick-action{
+  }
+}
