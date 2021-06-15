@@ -5,9 +5,7 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
-  def show
-    @patient = Patient.find(params[:id])
-  end
+  def show;end
 
   def new
     @patient = Patient.new
@@ -22,10 +20,14 @@ class PatientsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit;end
 
   def update
+    if @patient.update(patient_params)
+      redirect_to patients_path
+    else
+      render :new
+    end
   end
 
   def destroy

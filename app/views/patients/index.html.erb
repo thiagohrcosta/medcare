@@ -19,7 +19,7 @@
         <td><%= patient.cpf %></td>
         <td><%= patient.birth_date %></td>
         <td>
-          <%= link_to "#" do %>
+          <%= link_to edit_patient_path(patient.id) do %>
             <i class="fas fa-edit-doctor fa-user-edit"></i></td>
           <% end %>
         <td>
