@@ -9,6 +9,48 @@
 
   </div>
 
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Médico</th>
+          <th>Paciente</th>
+          <th>Marcado para</th>
+          <th>Início</th>
+          <th>Término</th>
+        </tr>
+      </thead>
+      <% @appointments.each do |appointment| %>
+      <tbody>
+        <tr>
+          <td><%= appointment.doctor.name %></td>
+          <td><%= appointment.patient.name %></td>
+          <td><%= appointment.starts_at.day %>/<%= appointment.starts_at.month %>/<%= appointment.starts_at.year %></td>
+          <% if appointment.starts_at.min == 0 %>
+            <td><%= appointment.starts_at.hour %>:0<%= appointment.starts_at.min %> h</td>
+          <% else %>
+            <td><%= appointment.starts_at.hour %>:<%= appointment.starts_at.min %> h</td>
+          <% end %>
+          <%if appointment.ends_at.min == 0 %>
+            <td><%= appointment.ends_at.hour %>:0<%= appointment.ends_at.min %> h</td>
+          <% else %>
+            <td><%= appointment.ends_at.hour %>:<%= appointment.ends_at.min %> h</td>
+          <% end %>
+          <td>
+            <%= link_to edit_appointment_path(appointment.id) do %>
+              <i class="fas fa-edit-doctor fa-user-edit"></i>
+            <% end %>
+          </td>
+           <td>
+            <%= link_to destroy_appointment_path(appointment.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+              <i class="fas fa-delete-doctor fa-times-circle"></i>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+  <% end %>
+  </table>
+
+
 
 
 </div>
