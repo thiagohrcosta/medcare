@@ -9,7 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active btn-home-login" aria-current="page" href="#">Login</a>
+          <% if user_signed_in? %>
+            <%= link_to "Dashboard", new_user_session_path, class: "btn-home-login"  %>
+          <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn-home-login"  %>
+          <% end %>
         </li>
       </ul>
     </div>
