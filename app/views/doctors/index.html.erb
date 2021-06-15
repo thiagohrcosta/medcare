@@ -4,9 +4,26 @@
 <div class="doctor-content">
   <h2>Lista de médicos</h2>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CRM</th>
+        <th>CRM-UF</th>
+      </tr>
+    </thead>
   <% @doctors.each do |doctor| %>
-    <p><%= doctor.name %></p>
+    <tbody>
+      <tr>
+        <td><%= doctor.name %></td>
+        <td><%= doctor.crm %></td>
+        <td><%= doctor.crm_uf %></td>
+        <td><i class="fas fa-edit-doctor fa-user-edit"></i></td>
+        <td><i class="fas fa-delete-doctor fa-times-circle"></i></td>
+      </tr>
+    </tbody>
   <% end %>
+  </table>
 
 </div>
 
