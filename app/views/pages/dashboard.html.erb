@@ -5,3 +5,41 @@
 <%= render 'dashboard_content' %>
 
 </div>
+
+<div class="filter-content">
+<%= search_form_for @q do |f| %>
+    <%= f.label :name %>
+    <%= f.collection_select :name_eq, Doctor.all, :name, :name, {} %>
+    <%= f.submit %>
+<% end %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CRM</th>
+        <th>CRM-UF</th>
+      </tr>
+    </thead>
+  <% @doctor.each do |doctor| %>
+    <tbody>
+      <tr>
+        <td><%= doctor.name %></td>
+        <td><%= doctor.crm %></td>
+        <td><%= doctor.crm_uf %></td>
+        <td>
+          <%= link_to edit_doctor_path(doctor.id) do %>
+            <i class="fas fa-edit-doctor fa-user-edit"></i></td>
+          <% end %>
+        <td>
+          <%= link_to doctor_path(doctor.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+            <i class="fas fa-delete-doctor fa-times-circle"></i>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+  </table>
+
+</div>
+
