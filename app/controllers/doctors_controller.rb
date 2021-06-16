@@ -2,7 +2,8 @@ class DoctorsController < ApplicationController
   before_action :set_doctor, except: [:index, :new, :create]
   before_action :set_counter, only: [:index, :new, :edit]
   def index
-    @doctors = Doctor.all
+    @q = Doctor.ransack(params[:q])
+    @doctor = @q.result(distinct: true)
   end
 
   def show;end
