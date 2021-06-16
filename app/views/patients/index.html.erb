@@ -23,7 +23,7 @@
             <i class="fas fa-edit-doctor fa-user-edit"></i></td>
           <% end %>
         <td>
-          <%= link_to destroy_patient_path(patient.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+          <%= link_to patient_path(patient.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
             <i class="fas fa-delete-doctor fa-times-circle"></i>
           <% end %>
         </td>

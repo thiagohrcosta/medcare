@@ -38,7 +38,7 @@
             <% end %>
           </td>
            <td>
-            <%= link_to destroy_appointment_path(appointment.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+            <%= link_to appointment_path(appointment.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
               <i class="fas fa-delete-doctor fa-times-circle"></i>
             <% end %>
           </td>
