@@ -20,6 +20,9 @@ Acesse a aplicação diretamente no Heroku [clicando aqui](https://app-medcare.h
  - Rails - Rails 6.1.3.2
 - PostgreSQL -  12.7
 
+## Modelagem do Banco de Dados
+![db](https://res.cloudinary.com/dloadb2bx/image/upload/v1623963141/medcaredb_hjiazf.png)
+
 ## O que o usuário pode fazer?
 
 ### Tela do médico
@@ -55,3 +58,16 @@ Uma das principais **regras de negício** era permitir que o **usuário** fosse 
 # Testes - Rspec
 Para a realização dos testes foi utilziado o **Rspec** sendo criados 24 testes.
 ![Rspec](https://res.cloudinary.com/dloadb2bx/image/upload/v1623950824/medCareTest_mqvqsg.png)
+
+# Como rodar o projeto?
+Caso você já tenha instalado o Ruby on Rails nas versões apontadas no início, após efetuar o download do projeto é necessário rodar os seguintes comandos dentro da pasta do arquivo:
+
+-   yarn install;
+-  bundle install;
+
+Em seguida para iniciar o banco de dados é necessário rodar os seguintes comandos:
+
+-   rails db:create (caso o banco de dados não esteja criado);
+-   rails db:migrante (para implementar as migrações no bando de dados);
+
+Persistindo erros relacionados ao banco de dados rode no terminal o comando  `rails db:reset`. Ao final rode o comando `rails s`  para iniciar a aplicação em `localhost:3000`.
