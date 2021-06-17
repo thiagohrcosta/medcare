@@ -14,6 +14,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.ends_at = @appointment.starts_at + 30.minutes
       if @appointment.save
         redirect_to appointments_path
       else
