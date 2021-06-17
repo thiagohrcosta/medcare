@@ -19,6 +19,8 @@ Não foi adicionada qualquer restrição ao usuário no Heroku, assim basta cria
  - [Cpf_Cnpj](https://github.com/fnando/cpf_cnpj) - Geração de CPFs
  - [Validators](https://github.com/fnando/validators) - Validação de CPF
  - [Rspec](https://github.com/rspec/rspec) - Testes
+ - [Shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Testes
+
 
 ### Versões
  - Ruby - 2.6.6
@@ -64,6 +66,8 @@ Uma das principais **regras de negício** era permitir que o **usuário** fosse 
 Para a realização dos testes foi utilziado o **Rspec** sendo criados 24 testes.
 ![Rspec](https://res.cloudinary.com/dloadb2bx/image/upload/v1623950824/medCareTest_mqvqsg.png)
 
+Para rodar os testes acesse a pasta do arquivo pelo terminal e rode o compando `rspec spec/models`.
+
 # Como rodar o projeto?
 Caso você já tenha instalado o Ruby on Rails nas versões apontadas no início, após efetuar o download do projeto é necessário rodar os seguintes comandos dentro da pasta do arquivo:
 
@@ -76,3 +80,72 @@ Em seguida para iniciar o banco de dados é necessário rodar os seguintes coman
 -   rails db:migrante (para implementar as migrações no bando de dados);
 
 Persistindo erros relacionados ao banco de dados rode no terminal o comando  `rails db:reset`. Ao final rode o comando `rails s`  para iniciar a aplicação em `localhost:3000`.
+
+# Etapas de desenvolvimento
+**14 de junho, 2021**
+
+     - Projeto criado em Rails;
+     - Model Doctor criado;
+     - Model Patient criado;
+     - Model Appointment criado;
+     - Controllers Doctor criado;
+     - Controllers Patient criado;
+     - Controllers Appointment criado;
+     - Relacionamento entre Models adicionado;
+     - Ações em Doctors Controller adicionadas;
+     - Rspec gem adicionada;
+     - Shoulda-matchers gem adcionada;
+     - Testes adicionados para Doctor com Rspec;
+     - Devise gem adicionada;
+     - Devise views adicionadas.
+
+**15 de junho, 2021**
+
+    - Devise adicionado para autenticação na Home Page;
+    - Página de Login adicionada;
+    - Dashboard inicial completo;
+    - Simple Form For adicionado;
+    - HTML e CSS para adicionar novos médicos implementado;
+    - Redirecionamento de rotas Dashboard e Doctors;
+    - Adicionando Doctors e botões para editar e apagar;
+    - Método para apagar médico adicionado;
+    - Método para editar médico adicionado;
+    - Restrição para remover médico com agendamento marcado implementada;
+    - Adicionado Pacientes ao Dash;
+    - Adicionado rotas doctors e patients;
+    - Tela de criação de pacientes completa;
+    - Testes adicionados para Patients com Rspec;
+    - Adicionado path para editar paciente;
+    - Ações para edição e update de paciente criadas no controller;
+    - Rota appointment adicionada;
+    - Reidrecionamento de rotas do Appointment no Dashboard;
+    - Adicionada view para Appointment;
+    - Ações em Appointment controller adicionadas;
+    - Validações adicionadas em Appointment;
+    - Validações para evitar agendamento no mesmo horário implementada;
+    - Favicon adicionado;
+    - Adicionado contador de agendamentos e pacientes únicos.
+
+**16 de junho, 2021**
+
+    - Rotas refatoradas para method: delete;
+    - Filtro adicionado com Ransack gem;
+    - Adicionada soma de agendamentos por médico;
+    - Adicionada soma de pacientes únicos atendidos por médico;
+    - CSS adicionado ao filtro;
+    - CSS adicionado para as tabelas;
+    - Adicionados testes para validar CRM;
+    - Adicionados testes para validar CRM_UF;
+    - Adicionados testes para Appointment com Rspec;
+
+**17 de junho, 2021**
+
+    - Correção na apresentação e formatação da data;
+    - Define que ends_at será obrigatoriamente 30 minutos após starts_at;
+    - Validação de CPF completa;
+    - Testes para verificar validação de CPF completos;
+    - Adicionada validação para horário de abertura, almoço e fechamento;
+    - Adicionado About Us na Home Page;
+    - Adicionado Footer na Home Page;
+    - Adicionado CSS para Sign up e Forgot Password;
+    - Adicionado Readme - Projeto completo.
