@@ -8,6 +8,12 @@ class DoctorsController < ApplicationController
     @appointments = Appointment.all
 
     @doctor_completed_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).and(Appointment.joins(:doctor).where("ends_at <= ?", DateTime.now)).count
+    # @doctor_unique_patient = Appointment
+    #   .joins(:doctor)
+    #   .joins(:patient)
+    #   .where(patient_id: @patient)
+    #   .distinct.count
+    @doctor_unique_patient = Appointment.joins(:doctor).where(doctor_id: @doctor).distinct.count("patient_id")
   end
 
   def show;end
