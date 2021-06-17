@@ -1,5 +1,8 @@
 ## MedCare
+![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1623961275/medcare1_gnbsd6.png)
 O objetivo do presente projeto foi desenvolver uma aplicação para uma clínica médica aqui denominada **MedCare** que permita ao usuário cadastrar médicos, pacientes e agendar consultas respeitando **regras de negócio** previamente determinadas pelo cliente.
+
+Acesse a aplicação diretamente no Heroku [clicando aqui](https://app-medcare.herokuapp.com/):
 
 ## Tecnologias utilizadas
 <img alt="Ruby" src="https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white"/> <img alt="Rails" src="https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white"/> <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/> <img alt="SASS" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="Postgres" src ="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>
@@ -30,10 +33,11 @@ No menu lateral esquerdo é possível acessar a página de listagem de todos os 
 
 ### Cadastrar novo paciente
 ![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1623949079/medCare3_thkj8r.png)
-Já na tela de paciente o **usuário** poderá cadastrar um novo paciente atentando-se ao fato de que se **é exigido um CPF válido** pela aplicação.
+Já na tela de paciente o **usuário** poderá cadastrar um novo paciente atentando-se ao fato de que **é exigido um CPF válido** pela aplicação.
 Caso não possua um CPF para utilizar no cadastro **foi disponibilizado um gerador de CPF** dentro da aplicação de forma a permitir testes.
 ![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1623949194/medCarecpf_klvbx0.png)
-Para acessar abra o terminal na pasta do arquivo e rode `rails c`, em seguida digita o comando `CPF.generate` para gerar um número válido, em seguida utilize-o para cadastrar na aplicação.
+
+Para acessar abra o terminal na pasta do arquivo e rode `rails c`, em seguida digite o comando `CPF.generate` para gerar um número válido, em seguida utilize-o para cadastrar na aplicação.
 
 ### Editar ou excluir paciente
 ![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1623950394/medCare7_bgfzdk.png)
