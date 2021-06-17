@@ -8,5 +8,4 @@ class Appointment < ApplicationRecord
   validates :ends_at, presence: true
 
   validates :starts_at, uniqueness: true
-
 end
