@@ -1,6 +1,7 @@
 class DoctorsController < ApplicationController
   before_action :set_doctor, except: [:index, :new, :create]
   before_action :set_counter, only: [:index, :new, :edit]
+
   def index
     @q = Doctor.ransack(params[:q])
     @doctor = @q.result(distinct: true)
@@ -39,9 +40,6 @@ class DoctorsController < ApplicationController
   def destroy
     @doctor.destroy
     redirect_to doctors_path
-  end
-
-  def home
   end
 
   private
