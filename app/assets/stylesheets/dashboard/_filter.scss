@@ -2,3 +2,19 @@
   margin-left: 15%;
   padding: 20px;
 }
+
+.filter-form{
+  padding: 10px 0px 5px;
+  background-color: #e3e3e3;
+  margin: 0 0 20px 0;
+}
+
+select#q_name_eq{
+  width: 80%;
+}
+
+.btn-search-doctor{
+  background-color: #2F4687 !important;
+  color: #fff !important;
+  padding: 5px 25px !important;
+}
