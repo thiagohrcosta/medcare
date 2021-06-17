@@ -4,6 +4,9 @@ class DoctorsController < ApplicationController
   def index
     @q = Doctor.ransack(params[:q])
     @doctor = @q.result(distinct: true)
+
+    @appointments = Appointment.all
+    @doctor_total_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).count
   end
 
   def show;end
