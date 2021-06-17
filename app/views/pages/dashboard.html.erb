@@ -7,11 +7,13 @@
 </div>
 
 <div class="filter-content">
-<%= search_form_for @q do |f| %>
-    <%= f.label :name %>
-    <%= f.collection_select :name_eq, Doctor.all, :name, :name, {} %>
-    <%= f.submit %>
-<% end %>
+  <div class="filter-form">
+    <%= search_form_for @q do |f| %>
+        <%= f.label :name, "Nome" %>
+        <%= f.collection_select :name_eq, Doctor.all, :name, :name, {} %>
+        <%= f.submit "Buscar", class: "btn btn-search-doctor" %>
+    <% end %>
+  </div>
 
   <table class="table">
     <thead>
