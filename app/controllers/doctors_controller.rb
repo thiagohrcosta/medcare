@@ -6,7 +6,8 @@ class DoctorsController < ApplicationController
     @doctor = @q.result(distinct: true)
 
     @appointments = Appointment.all
-    @doctor_total_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).count
+
+    @doctor_completed_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).and(Appointment.joins(:doctor).where("ends_at <= ?", DateTime.now)).count
   end
 
   def show;end
