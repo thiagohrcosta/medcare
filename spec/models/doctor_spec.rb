@@ -20,32 +20,43 @@ RSpec.describe Doctor, type: :model do
     expect(doctor).to_not be_valid
   end
 
-  it 'Is not valid without a CRM' do
-    doctor = Doctor.new(
-      name: 'Derek Shepherd',
-      crm: '',
-      crm_uf: 'MG'
-    )
-    expect(doctor).to_not be_valid
+  context 'CRM Validation' do
+    it 'Is not valid without a CRM' do
+      doctor = Doctor.new(
+        name: 'Derek Shepherd',
+        crm: '',
+        crm_uf: 'MG'
+      )
+      expect(doctor).to_not be_valid
+    end
+
+    it 'Is not valid if CRM != integer' do
+      doctor = Doctor.new(
+        name: 'Derek Shepherd',
+        crm: '12910a',
+        crm_uf: 'MG'
+      )
+      expect(doctor).to_not be_valid
+    end
+
+    it 'Is not valid without a CRM_UF' do
+      doctor = Doctor.new(
+        name: 'Derek Shepherd',
+        crm: '90123',
+        crm_uf: ''
+      )
+      expect(doctor).to_not be_valid
+    end
+    it 'Is not valid if CRM_UF length is != from 2' do
+      doctor = Doctor.new(
+        name: 'Derek Shepherd',
+        crm: '90123',
+        crm_uf: 'MGS'
+      )
+      expect(doctor).to_not be_valid
+    end
   end
 
-  it 'Is not valid if CRM != integer' do
-    doctor = Doctor.new(
-      name: 'Derek Shepherd',
-      crm: '12910a',
-      crm_uf: 'MG'
-    )
-    expect(doctor).to_not be_valid
-  end
-
-  it 'Is not valid without a CRM_UF' do
-    doctor = Doctor.new(
-      name: 'Derek Shepherd',
-      crm: '90123',
-      crm_uf: ''
-    )
-    expect(doctor).to_not be_valid
-  end
 end
 
   context 'Uniqueness Validation' do
