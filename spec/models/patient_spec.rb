@@ -42,7 +42,7 @@ RSpec.describe Patient, type: :model do
   context 'CPF Validation' do
     it { should validate_uniqueness_of(:cpf)}
 
-    it 'CPF is not valid wiht less then 11 numbers' do
+    it 'Is not valid if CPF has less then 11 numbers' do
       patient = Patient.new(
         name: 'Meredith Grey',
         cpf: '123456789',
@@ -51,7 +51,7 @@ RSpec.describe Patient, type: :model do
       expect(patient).to_not be_valid
     end
 
-    it 'CPF only acept number' do
+    it 'Is not valid if CPF != integer' do
       patient = Patient.new(
         name: 'Meredith Grey',
         cpf: '123456789aa',
@@ -59,6 +59,10 @@ RSpec.describe Patient, type: :model do
       )
       expect(patient).to_not be_valid
     end
+  end
+
+  context 'Patient associations' do
+    it { should have_many(:appointments) }
   end
 
 
