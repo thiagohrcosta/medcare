@@ -5,7 +5,7 @@ RSpec.describe Patient, type: :model do
     it 'Patient is valid with valid attributes' do
       patient = Patient.new(
         name: 'Meredith Grey',
-        cpf: '12312312300',
+        cpf: '51342130200',
         birth_date: 1978-01-01
         )
       expect(patient).to be_valid
@@ -14,7 +14,7 @@ RSpec.describe Patient, type: :model do
     it 'Is not valid without a name' do
       patient = Patient.new(
         name: '',
-        cpf: '12312312300',
+        cpf: '51342130200',
         birth_date: 1978-01-01
         )
       expect(patient).to_not be_valid
@@ -32,7 +32,7 @@ RSpec.describe Patient, type: :model do
     it 'Is not valid without a Birthdate' do
       patient = Patient.new(
         name: 'Meredith Grey',
-        cpf: '12312312300',
+        cpf: '51342130200',
         birth_date: ""
       )
       expect(patient).to_not be_valid
@@ -40,21 +40,30 @@ RSpec.describe Patient, type: :model do
   end
 
   context 'CPF Validation' do
-    it { should validate_uniqueness_of(:cpf)}
+    it { should validate_uniqueness_of(:cpf) }
 
     it 'Is not valid if CPF has less then 11 numbers' do
       patient = Patient.new(
         name: 'Meredith Grey',
-        cpf: '123456789',
+        cpf: '513421302',
         birth_date: 1978-01-01
       )
       expect(patient).to_not be_valid
     end
 
+    it 'Is not valid if CPF does not respect CPF logic' do
+      patient = Patient.new(
+        name: 'Meredith Grey',
+        cpf: '20010012300',
+        birth_date: 1978-01-01
+      )
+      expect(patient).to_not be_valid
+      end
+
     it 'Is not valid if CPF != integer' do
       patient = Patient.new(
         name: 'Meredith Grey',
-        cpf: '123456789aa',
+        cpf: '513421302aa',
         birth_date: 1978-01-01
       )
       expect(patient).to_not be_valid
