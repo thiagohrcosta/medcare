@@ -23,7 +23,7 @@
         <tr>
           <td><%= appointment.patient.name %></td>
           <td><%= appointment.doctor.name %></td>
-          <td><%= appointment.starts_at.day %>/<%= appointment.starts_at.month %>/<%= appointment.starts_at.year %></td>
+          <td><%= appointment.starts_at.strftime("%d/%m/%Y") %></td>
           <% if appointment.starts_at.min == 0 %>
             <td><%= appointment.starts_at.hour %>:0<%= appointment.starts_at.min %> h</td>
           <% else %>
