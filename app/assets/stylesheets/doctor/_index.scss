@@ -6,7 +6,7 @@
 .btn-create-doctor{
   padding: 5px 0;
   width: 100%;
-  background-color: #2F4687;
+  background-color: $main_blue;
   color: #fff;
   font-weight: bold;
 }
@@ -18,9 +18,9 @@ td, th {
 
 
 .fa-edit-doctor{
-  color: #2F4687;
+  color: $main_blue;
 }
 
 .fa-delete-doctor{
-  color: #C84B31;
+  color: $main_red;
 }

@@ -2,7 +2,7 @@
   text-align: center;
   width: 120px;
   font-weight: bold;
-  border: 1px solid #2F4687;
+  border: 1px solid $main_blue;
   border-radius: 5px;
   padding: 10px 30px;
   color: #020100;
@@ -10,7 +10,7 @@
 
 
 .btn-home-login:hover{
-  background-color: #2F4687;
+  background-color: $main_blue;
   color: #fff !important;
 
 }
