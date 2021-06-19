@@ -118,7 +118,7 @@ Persistindo erros relacionados ao banco de dados rode no terminal o comando  `ra
     - Adicionado path para editar paciente;
     - Ações para edição e update de paciente criadas no controller;
     - Rota appointment adicionada;
-    - Reidrecionamento de rotas do Appointment no Dashboard;
+    - Redirecionamento de rotas do Appointment no Dashboard;
     - Adicionada view para Appointment;
     - Ações em Appointment controller adicionadas;
     - Validações adicionadas em Appointment;
