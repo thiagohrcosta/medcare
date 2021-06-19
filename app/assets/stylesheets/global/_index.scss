@@ -1,0 +1,18 @@
+ // Color #2F4687
+ // Color #20C5B9;
+
+$main_blue: #2F4687;
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+table{
+
+  th{
+    background-color: $main_blue;
+    color: #fff;
+  }
+
+}
