@@ -152,7 +152,7 @@ Persistindo erros relacionados ao banco de dados rode no terminal o comando  `ra
 
 **19 de junho, 2021**
 
-    - Adiciona variávies de cores ao CSS;
+    - Adicionada variávies de cores ao CSS;
     - Refatoramento de nomeclaturas;
     - Refatoramento do model para se tormar mais "Dry";
     - Bug em testes corrigido para suportar validação customizada;
