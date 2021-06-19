@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :set_counter, only: [:index, :new, :update]
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.order(starts_at: :asc).all
   end
 
   def show;end
