@@ -14,24 +14,24 @@
         <th>Apagar</th>
       </tr>
     </thead>
-  <% @patients.each do |patient| %>
-    <tbody>
-      <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.cpf %></td>
-        <td><%= patient.birth_date.strftime("%d/%m/%Y") %></td>
-        <td>
-          <%= link_to edit_patient_path(patient.id) do %>
-            <i class="fas fa-edit-doctor fa-user-edit"></i></td>
-          <% end %>
-        <td>
-          <%= link_to patient_path(patient.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
-            <i class="fas fa-delete-doctor fa-times-circle"></i>
-          <% end %>
-        </td>
-      </tr>
-    </tbody>
-  <% end %>
+    <% @patients.each do |patient| %>
+      <tbody>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.cpf %></td>
+          <td><%= patient.birth_date.strftime("%d/%m/%Y") %></td>
+          <td>
+            <%= link_to edit_patient_path(patient.id) do %>
+              <i class="fas fa-edit-doctor fa-user-edit"></i></td>
+            <% end %>
+          <td>
+            <%= link_to patient_path(patient.id), method: :delete, data: {"confirm": "Deseja realmente apagar?"} do %>
+              <i class="fas fa-delete-doctor fa-times-circle"></i>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
   </table>
 
 </div>
