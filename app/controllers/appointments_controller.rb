@@ -15,11 +15,11 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.ends_at = @appointment.starts_at + 30.minutes
-      if @appointment.save
-        redirect_to appointments_path
-      else
-        render :new
-      end
+    if @appointment.save
+      redirect_to appointments_path
+    else
+      render :new
+    end
   end
 
   def edit;end
@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
   end
 
   def set_counter
-    @appointments_count = Appointment.where("ends_at <= ?", DateTime.now).count
-    @unique_count_patients = Appointment.select('distinct(patient_id)').where("ends_at <= ?", DateTime.now).count
+    @appointments_count = Appointment.where('ends_at <= ?', DateTime.now).count
+    @unique_count_patients = Appointment.select('distinct(patient_id)').where('ends_at <= ?', DateTime.now).count
   end
 end

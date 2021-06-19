@@ -6,10 +6,8 @@ class DoctorsController < ApplicationController
     @q = Doctor.ransack(params[:q])
     @doctor = @q.result(distinct: true)
 
-    @appointments = Appointment.all
-
-    @doctor_completed_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).and(Appointment.joins(:doctor).where("ends_at <= ?", DateTime.now)).count
-    @doctor_unique_patient = Appointment.joins(:doctor).where(doctor_id: @doctor).distinct.count("patient_id")
+    @doctor_completed_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).and(Appointment.joins(:doctor).where('ends_at <= ?', DateTime.now)).count
+    @doctor_unique_patients = Appointment.joins(:doctor).where(doctor_id: @doctor).distinct.count('patient_id')
   end
 
   def show;end
@@ -53,7 +51,7 @@ class DoctorsController < ApplicationController
   end
 
   def set_counter
-    @appointments_count = Appointment.where("ends_at <= ?", DateTime.now).count
-    @unique_count_patients = Appointment.select('distinct(patient_id)').where("ends_at <= ?", DateTime.now).count
+    @appointments_count = Appointment.where('ends_at <= ?', DateTime.now).count
+    @unique_count_patients = Appointment.select('distinct(patient_id)').where('ends_at <= ?', DateTime.now).count
   end
 end
