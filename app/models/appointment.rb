@@ -2,15 +2,10 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   belongs_to :doctor
 
-  validates :patient_id, presence: true
-  validates :doctor_id, presence: true
-  validates :starts_at, presence: true
-  validates :ends_at, presence: true
+  validates :patient_id, :doctor_id, :starts_at, :ends_at, presence: true
 
   validates :starts_at, uniqueness: true
-  validate :oppening_hour?
-  validate :close_hour?
-  validate :lunch_time?
+  validate :oppening_hour?, :close_hour?, :lunch_time?
 
   def oppening_hour?
     if starts_at.hour < 9
