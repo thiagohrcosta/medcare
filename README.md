@@ -146,7 +146,7 @@ Persistindo erros relacionados ao banco de dados rode no terminal o comando  `ra
     - Adicionado About Us na Home Page;
     - Adicionado Footer na Home Page;
     - Adicionado CSS para Sign up e Forgot Password;
-    - Adicionado Readme - Projeto completo.
+    - Adicionado Readme.
 
 **19 de junho, 2021**
 
@@ -158,3 +158,8 @@ Persistindo erros relacionados ao banco de dados rode no terminal o comando  `ra
     - Filtro para selecionar médicos adicionado ao index de médicos;
     - Adicionada responsividade para Home Page;
     - Padronização de quotes.
+
+**20 de junho, 2021**
+
+    - Adicionando campo "listar todos os médicos";
+    - Adicionada view para editar appointment;
