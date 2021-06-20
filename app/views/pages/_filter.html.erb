@@ -2,7 +2,7 @@
   <div class="filter-form">
     <%= search_form_for @q do |f| %>
         <%= f.label :name, "Nome" %>
-        <%= f.collection_select :name_eq, Doctor.all, :name, :name, {} %>
+        <%= f.collection_select :name_eq, Doctor.all, :name, :name, {include_blank: 'Todos os médicos'} %>
         <%= f.submit "Buscar", class: "btn btn-search-doctor" %>
     <% end %>
   </div>
