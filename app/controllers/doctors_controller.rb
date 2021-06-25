@@ -3,8 +3,8 @@ class DoctorsController < ApplicationController
   before_action :set_counter, only: [:index, :new, :edit]
 
   def index
-    @q = Doctor.ransack(params[:q])
-    @doctor = @q.result(distinct: true)
+    @query_doctors = Doctor.ransack(params[:q])
+    @doctor = @query_doctors.result(distinct: true)
 
     @doctor_completed_appointments = Appointment.joins(:doctor).where(doctor_id: @doctor).and(Appointment.joins(:doctor).where('ends_at <= ?', DateTime.now)).count
     @doctor_unique_patients = Appointment.joins(:doctor).where(doctor_id: @doctor).distinct.count('patient_id')
